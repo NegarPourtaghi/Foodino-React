@@ -11,7 +11,7 @@ const drawerWidth = 240;
 const navItems = ['Home', 'Menu','Branches', 'About', 'Contact' ];
 
 const Header = (props) => {
-    const state=useSelector(state => state.CartState.itemsCounter);
+    const state=useSelector(state => state.CartState);
   const [mobileOpen, setMobileOpen] = useState(false);
 
   const handleDrawerToggle = () => {
@@ -28,7 +28,7 @@ const Header = (props) => {
         {navItems.map((item) => (
           <ListItem key={item} disablePadding>
             <ListItemButton sx={{ textAlign: 'center' }}>
-              <ListItemText primary={item} />
+              <Link to={`${item}`} key={item} style={{textDecoration:"none", color:"#1e1e1e"}}>{item}</Link>
             </ListItemButton>
           </ListItem>
         ))}
@@ -54,7 +54,7 @@ const Header = (props) => {
              <MenuIcon />
 
           </IconButton>
-          <Grid container>
+          <Grid container sx={{display:"flex",justifyContent:"space-between", width:"100%", marginRight:"50px"}}>
             <Grid item md={2}>
             <Typography
             component="div"
@@ -76,8 +76,8 @@ const Header = (props) => {
           </Box>
           </Grid>
           <Grid item md={2} sx={{display:"flex", justifyContent:"right", alignItems:"center"}}>
-          <Link to="/ShopingCart" style={{color:"#fff", textDecoration:"none"}}><ShoppingCartSharpIcon/> <span style={{backgroundColor:"#ffffff6e", padding:"4px", borderRadius:"50%", width:"24px", height:"24px", display:"inline-flex", justifyContent:"center",alignItems:"center"}}>{state}</span></Link>
-          <Link to="/ShopingCart" style={{color:"#fff", textDecoration:"none"}}><FavoriteIcon/> <span style={{backgroundColor:"#ffffff6e", padding:"4px", borderRadius:"50%", width:"24px", height:"24px", display:"inline-flex", justifyContent:"center",alignItems:"center"}}>{state}</span></Link>
+          <Link to="/ShopingCart" style={{color:"#fff", textDecoration:"none"}}><ShoppingCartSharpIcon/> <span style={{backgroundColor:"#ffffff6e", padding:"4px", borderRadius:"50%", width:"24px", height:"24px", display:"inline-flex", justifyContent:"center",alignItems:"center"}}>{state.itemsCounter}</span></Link>
+          <Link to="/Favourites" style={{color:"#fff", textDecoration:"none"}}><FavoriteIcon/> <span style={{backgroundColor:"#ffffff6e", padding:"4px", borderRadius:"50%", width:"24px", height:"24px", display:"inline-flex", justifyContent:"center",alignItems:"center"}}>{state.likedItems.length}</span></Link>
 
           </Grid>
           

@@ -10,9 +10,12 @@ import slider6  from '../../public/Slider/slider6.jpg'
 import slider7  from '../../public/Slider/slider7.jpg'
 import 'swiper/css/autoplay'
 import 'swiper/css/pagination'
+import { Box } from '@mui/material';
+import { SliderBox, SliderPagination } from '../Styles/Style';
 export default () => {
   return (
-    <Swiper
+   <SliderBox>
+     <Swiper
     modules={[Autoplay, Pagination]}
       spaceBetween={0}
       slidesPerView={1}
@@ -20,7 +23,7 @@ export default () => {
       autoplay={true}
       onSlideChange={() => console.log('slide change')}
       onSwiper={(swiper) => console.log(swiper)}
-      style={{height:'500px', backgroundColor:"#ff9248"}}
+      style={{height:'100%', backgroundColor:"#ff9248"}}
 
     >
       <SwiperSlide style={{display:"flex",justifyContent:"center",alignItems:"center"}}><div  style={{backgroundImage:`url(${slider1})`, width:"100%", height:"100%", backgroundSize:"cover", backgroundPosition:"center"}}></div></SwiperSlide>
@@ -30,9 +33,10 @@ export default () => {
       <SwiperSlide style={{display:"flex",justifyContent:"center",alignItems:"center"}}><div  style={{backgroundImage:`url(${slider5})`, width:"100%", height:"100%", backgroundSize:"cover", backgroundPosition:"center"}}></div></SwiperSlide>
       <SwiperSlide style={{display:"flex",justifyContent:"center",alignItems:"center"}}><div  style={{backgroundImage:`url(${slider6})`, width:"100%", height:"100%", backgroundSize:"cover", backgroundPosition:"center"}}></div></SwiperSlide>
       <SwiperSlide style={{display:"flex",justifyContent:"center",alignItems:"center"}}><div  style={{backgroundImage:`url(${slider7})`, width:"100%", height:"100%", backgroundSize:"cover", backgroundPosition:"center"}}></div></SwiperSlide>
-      <div class="main_slider_pagination_wrapper swiper-pagination" style={{backgroundColor:"#d8d8d891", padding:"8px",borderRadius:"12px", width:"fit-content",left:"45%"}}></div>
+      <SliderPagination class="main_slider_pagination_wrapper swiper-pagination" ></SliderPagination>
 
           </Swiper>
+   </SliderBox>
   );
 };
 

@@ -13,5 +13,10 @@
             return state.selectedItems[Index].quantity
         }
     }
+    const CheckIfIsLiked=(state, id)=>{
+        const result=!!state.likedItems.find(item => item.id === id)
+        return result;
 
-export {IsInCart , CheckQuantity}
+    }
+
+export {IsInCart , CheckQuantity, CheckIfIsLiked}

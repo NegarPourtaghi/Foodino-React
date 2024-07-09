@@ -10,7 +10,7 @@ const initialState={
 }
 const SumItems=(item)=>{
     const itemsCounter=item.reduce((total, product) => total+product.quantity ,0)
-    const total=item.reduce((total,product) => total + product.price*product.quantity,0)
+    const total=item.reduce((total,product) => total + product.foodPrice*product.quantity,0)
     return {total,itemsCounter}
 
 }
@@ -38,6 +38,13 @@ const cartReducer=(state = initialState, action)=>{
                     likedItems:[...state.likedItems],
                 }
             }
+         
+        case "DISLIKED":
+                const newLikedItems=state.likedItems.filter(item => item.id !== action.payload.id)
+                return{
+                    ...state,
+                    likedItems:[...newLikedItems]
+                }
 
         case "REMOVE_ITEM":
             const newItems=state.selectedItems.filter(item => item.id !== action.payload.id)
@@ -66,19 +73,8 @@ const cartReducer=(state = initialState, action)=>{
                 ...SumItems(state.selectedItems),
 
             }
-        case "LIKED":
-            if(!state.liked.find(item => item.id === action.payload.id)){
-                state.liked.push({
-                    ...action.payload,
-
-                })
-                
-            }
-            return{
-                ...state,
-                liked:[...state.liked]
-                
-            }
+       
+           
         case "CLEAR":
             return{
                 selectedItems:[],

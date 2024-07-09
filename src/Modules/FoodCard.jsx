@@ -2,39 +2,50 @@ import { Button, Card, CardActionArea, CardActions, CardContent, CardMedia, Typo
 import React from 'react';
 import { useSelector,useDispatch } from 'react-redux';
 import { AddItems, Decrease, Increase, Liked, RemoveItems } from '../Redux/Cart/OrderAction';
-import { CheckQuantity, IsInCart } from '../Helper/Functions';
+import { CheckIfIsLiked, CheckQuantity, IsInCart } from '../Helper/Functions';
 import { Link } from 'react-router-dom';
 import DeleteSharpIcon from '@mui/icons-material/DeleteSharp';
 import FavoriteSharpIcon from '@mui/icons-material/FavoriteSharp';
+import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
+import { FoodTitle } from '../Styles/Style';
 const FoodCard = ({data}) => {
     const state=useSelector(state => state.CartState)
     console.log(state)
     const dispatch=useDispatch()
     return (
         <div>
-    <Card sx={{ width: 320 , borderRadius:2, boxShadow:" rgba(149, 157, 165, 0.2) 0px 8px 24px;"} }>
+    <Card sx={{ width: "100%" , borderRadius:2, boxShadow:" rgba(149, 157, 165, 0.2) 0px 8px 24px;"} }>
             <CardActionArea>
                 <CardMedia
                 component="img"
-                height="160"
+                height="160px"
                 image={data.foodImage.url}
                 alt={data.foodName}
                 />
                 <CardContent>
 
-                <Typography  variant="h5" component="div">
+                <FoodTitle >
                     {data.foodName}
-                </Typography>
+                </FoodTitle>
 
-                <Typography  variant="h6" component="h6">
+                <FoodTitle >
                     {data.foodPrice} $
-                </Typography>
+                </FoodTitle>
                 </CardContent>
                 <CardActions sx={{display:"flex", justifyContent:"space-between", marginBottom:"8px"}}>
                 <Button size="small" variant="outlined" sx={{borderColor:"#ff6700", color:"#ff6700", ':hover':{bgcolor:"#ff6700",color:'#fff', borderColor:"#ff6700"}}} >
                 <Link style={{textDecoration:'none',color:"inherit", fontWeight:"600", textTransform:'none', transition:".5s all"}} to={`/FoodDetails/${data.foodSlug}`}>Details</Link>
                 </Button>
-                <Button size="small" sx={{color:"red", textTransform:'none'}} onClick={()=> dispatch(Liked(data))}><FavoriteSharpIcon/></Button>
+                <Button size="small" sx={{color:"red", textTransform:'none'}} onClick={()=> dispatch(Liked(data))}>
+                    
+                    {
+                        !CheckIfIsLiked(state,data.id)
+                        ?<FavoriteBorderIcon/>
+
+                        :<FavoriteSharpIcon/>
+
+                    }
+                    </Button>
 
                 {
                     !IsInCart(state,data.id) 

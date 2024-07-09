@@ -5,6 +5,7 @@ import {Typography} from '@mui/material'
 const Payment = () => {
     const newDate = {date: new Date()}
     const state=useSelector(state => state.CartState)
+    console.log(state)
     return (
         <div style={{display:"flex", justifyContent:"center", alignItems:"center"}}>
            <Grid container sx={{width:"700px", height:"320px", display:"flex",justifyContent:"center", boxShadow:" rgba(0, 0, 0, 0.1) 0px 4px 12px;",borderRadius:"4"}}>

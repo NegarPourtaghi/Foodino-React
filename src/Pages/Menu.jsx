@@ -41,7 +41,7 @@ const [Active, setActive]=useState(true)
 
             <div style={{display:"flex", justifyContent:"center", alignItems:"center", marginBottom:"50px" ,marginTop:"50px"}}>
                 {
-                    Buttons.map(item => <Button size='MEDIUM' variant='outlined' sx={{color:'#ff6700',textTransform:"none", borderColor:"#ff6700", ':hover':{bgcolor:"#ff6700", color:'#fff', borderColor:"#ff6700"}, ':focus':{ bgcolor:"#ff6700", color:"#fff"}     }} onClick={MenuHandler} key={item.id} name={item.Name} >{item.Text}</Button>)
+                    Buttons.map(item => <Button size='MEDIUM'  variant='outlined' sx={{color:'#ff6700',textTransform:"none", borderColor:"#ff6700", ':hover':{bgcolor:"#ff6700", color:'#fff', borderColor:"#ff6700"}, ':focus':{ bgcolor:"#ff6700", color:"#fff"}     }} onClick={MenuHandler} key={item.id} name={item.Name} >{item.Text}</Button>)
                 }
             </div>
             <div style={{width:"80%"}}>
@@ -49,37 +49,37 @@ const [Active, setActive]=useState(true)
                 {
                   !All 
                   ?<Spinner />
-                  :Sort === "All" && All.foods.map(item => <Grid sx={{display:"flex", justifyContent:"center"}} xs={6} md={4} item> <FoodCard key={item.id} data={item} /></Grid>)
+                  :Sort === "All" && All.foods.map(item => <Grid sx={{display:"flex", justifyContent:"center"}} xs={12} md={4} item> <FoodCard key={item.id} data={item} /></Grid>)
                 }
                  {
                   !Pizza 
                   ?<Spinner />
-                  : Sort === "Pizza" && Pizza.foods.map(item =><Grid sx={{display:"flex", justifyContent:"center"}} xs={6} md={4} item> <FoodCard key={item.id} data={item} /></Grid>)
+                  : Sort === "Pizza" && Pizza.foods.map(item =><Grid sx={{display:"flex", justifyContent:"center"}} xs={12} md={4} item> <FoodCard key={item.id} data={item} /></Grid>)
                 }
                  {
                   !Pasta 
                   ?<Spinner />
-                  :Sort === "Pasta" && Pasta.foods.map(item =><Grid sx={{display:"flex", justifyContent:"center"}} xs={6} md={4} item> <FoodCard key={item.id} data={item} /></Grid>)
+                  :Sort === "Pasta" && Pasta.foods.map(item =><Grid sx={{display:"flex", justifyContent:"center"}} xs={12} md={4} item> <FoodCard key={item.id} data={item} /></Grid>)
                 }
                 {
                   !Drinks 
                   ?<Spinner />
-                  : Sort === "Drinks" && Drinks.foods.map(item => <Grid sx={{display:"flex", justifyContent:"center"}} xs={6} md={4} item> <FoodCard key={item.id} data={item} /></Grid>)
+                  : Sort === "Drinks" && Drinks.foods.map(item => <Grid sx={{display:"flex", justifyContent:"center"}} xs={12} md={4} item> <FoodCard key={item.id} data={item} /></Grid>)
                 }
                 {
                   !Dessert 
                   ?<Spinner/>
-                  :Sort === "Dessert" && Dessert.foods.map(item => <Grid sx={{display:"flex", justifyContent:"center"}} xs={6} md={4} item> <FoodCard key={item.id} data={item} /></Grid>)
+                  :Sort === "Dessert" && Dessert.foods.map(item => <Grid sx={{display:"flex", justifyContent:"center"}} xs={12} md={4} item> <FoodCard key={item.id} data={item} /></Grid>)
                 }
                 {
                   !Sandwich 
                   ?<Spinner/>
-                  : Sort === "Sandwich" && Sandwich.foods.map(item => <Grid sx={{display:"flex", justifyContent:"center"}} xs={6} md={4} item> <FoodCard key={item.id} data={item} /></Grid>)
+                  : Sort === "Sandwich" && Sandwich.foods.map(item => <Grid sx={{display:"flex", justifyContent:"center"}} xs={12} md={4} item> <FoodCard key={item.id} data={item} /></Grid>)
                 }
                 {
                   !Appetizer 
                   ?<Spinner />
-                  :Sort === "Appetizer" && Appetizer.foods.map(item => <Grid sx={{display:"flex", justifyContent:"center"}} xs={6} md={4} item> <FoodCard key={item.id} data={item} /></Grid>)
+                  :Sort === "Appetizer" && Appetizer.foods.map(item => <Grid sx={{display:"flex", justifyContent:"center"}} xs={12} md={4} item> <FoodCard key={item.id} data={item} /></Grid>)
                 }
 
                 </Grid>

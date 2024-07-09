@@ -7,6 +7,7 @@ import Menu from '../Pages/Menu';
 import AboutUs from '../Pages/AboutUs';
 import ContactUs from '../Pages/ContactUs';
 import Branches from '../Pages/Branches';
+import Favourite from '../Pages/Favourites';
 
 const Router = () => {
     return (
@@ -19,6 +20,8 @@ const Router = () => {
                 <Route path="/About" element={<AboutUs />} />
                 <Route path="/Contact" element={<ContactUs />} />
                 <Route path="/Branches" element={<Branches />} />
+                <Route path="/Favourites" element={<Favourite />} />
+
 
             </Routes>
         </div>

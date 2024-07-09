@@ -8,6 +8,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { AddItems, Decrease, Increase, RemoveItems } from '../Redux/Cart/OrderAction';
 import DeleteSharpIcon from '@mui/icons-material/DeleteSharp';
 import Spinner from '../Modules/Spinner';
+import { FoodDetailsTitle } from '../Styles/Style';
 
 const FoodDetails = () => {
     const {slug}=useParams();
@@ -34,7 +35,7 @@ const FoodDetails = () => {
                     <Grid item md={6} xs={12}>
     
                         <div style={{padding:"12px"}}>
-                            <Typography variant='h3'>{data.foods[0].foodName}</Typography>
+                            <FoodDetailsTitle variant='h3'>{data.foods[0].foodName}</FoodDetailsTitle>
     
                         <div style={{marginTop:"20px"}}>
                             <h4>Food Gradient:</h4>

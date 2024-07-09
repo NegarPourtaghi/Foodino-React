@@ -1,5 +1,41 @@
 import { gql } from "@apollo/client";
 
+const GET_ALL_POSTS_3= gql`
+    query newone($skip: Int) {
+        foods(first:100){ 
+     foodPrice
+     foodName
+     foodSlug
+     sort
+     foodDetails,
+     id
+     foodImage {
+       url
+     }
+   }
+   foodsConnection(first: 3 , skip: $skip) {
+    pageInfo {
+      hasNextPage
+      hasPreviousPage
+      startCursor
+      endCursor
+      pageSize
+    }
+    edges {
+      node {
+        foodPrice
+     foodName
+     foodSlug
+     foodDetails,
+     id
+     foodImage {
+       url
+     }
+      }
+    }
+  }
+  }`
+
 const GET_ALL_POSTS= gql`
     query newone($skip: Int) {
         foods(first:100){ 
@@ -35,6 +71,7 @@ const GET_ALL_POSTS= gql`
     }
   }
   }`
+
 
 const GET_FOOD_DETAIL=gql`
 query GetFoodInfo($slug:String!) {
@@ -145,7 +182,7 @@ query  {
 }
 `
 
-export {GET_ALL_POSTS, GET_FOOD_DETAIL, GET_PIZZA, GET_PASTA, GET_Sandwich,GET_Dessert, GET_Drinks, GET_Appetizer}
+export {GET_ALL_POSTS_3,GET_ALL_POSTS, GET_FOOD_DETAIL, GET_PIZZA, GET_PASTA, GET_Sandwich,GET_Dessert, GET_Drinks, GET_Appetizer}
 
 
 // 
