@@ -3,6 +3,7 @@ import ShopingList from "../Templates/ShopingList";
 import Payment from "../Templates/Payment";
 import FinishPayment from "../Templates/FinishPayment";
 import { Button } from "@mui/material";
+import { StepButton } from "../Styles/Style";
 
 const ShopingCart = () => {
   const [Page, setPage] = useState(1);
@@ -32,22 +33,15 @@ const ShopingCart = () => {
           width: "100%",
         }}
       >
-        <Button
-          variant="contained"
-          sx={{ backgroundColor: "#ff6700", color: "#fff" }}
+        <StepButton
           disabled={Page === 3 && Empty === "true"}
           onClick={NextHandler}
         >
           Next
-        </Button>
-        <Button
-          variant="contained"
-          sx={{ backgroundColor: "#ff6700", color: "#fff" }}
-          disabled={Page === 1}
-          onClick={PreviousHandler}
-        >
+        </StepButton>
+        <StepButton disabled={Page === 1} onClick={PreviousHandler}>
           back
-        </Button>
+        </StepButton>
       </div>
     </div>
   );

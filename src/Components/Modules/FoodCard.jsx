@@ -79,44 +79,53 @@ const FoodCard = ({ data }) => {
               )}
             </Button>
 
-            {!IsInCart(state, data.id) ? (
-              <CardButton
-                size="small"
-                variant="contained"
-                onClick={() => dispatch(AddItems(data))}
-              >
-                Add to Cart
-              </CardButton>
-            ) : (
-              <Button
-                size="small"
-                sx={{ color: "#ff6700" }}
-                onClick={() => dispatch(Increase(data))}
-              >
-                +
-              </Button>
-            )}
-            {CheckQuantity(state, data.id) > 0 && (
-              <span>{state.itemsCounter}</span>
-            )}
-            {CheckQuantity(state, data.id) === 1 && (
-              <Button
-                size="small"
-                sx={{ color: "#ff6700" }}
-                onClick={() => dispatch(RemoveItems(data))}
-              >
-                <DeleteSharpIcon />
-              </Button>
-            )}
-            {CheckQuantity(state, data.id) > 1 && (
-              <Button
-                size="small"
-                sx={{ color: "#ff6700" }}
-                onClick={() => dispatch(Decrease(data))}
-              >
-                -
-              </Button>
-            )}
+            <div
+              style={{
+                width: "150px",
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+              }}
+            >
+              {!IsInCart(state, data.id) ? (
+                <CardButton
+                  size="small"
+                  variant="contained"
+                  onClick={() => dispatch(AddItems(data))}
+                >
+                  Add to Cart
+                </CardButton>
+              ) : (
+                <Button
+                  size="small"
+                  sx={{ color: "#ff6700" }}
+                  onClick={() => dispatch(Increase(data))}
+                >
+                  +
+                </Button>
+              )}
+              {CheckQuantity(state, data.id) > 0 && (
+                <span>{CheckQuantity(state, data.id)}</span>
+              )}
+              {CheckQuantity(state, data.id) === 1 && (
+                <Button
+                  size="small"
+                  sx={{ color: "#ff6700" }}
+                  onClick={() => dispatch(RemoveItems(data))}
+                >
+                  <DeleteSharpIcon />
+                </Button>
+              )}
+              {CheckQuantity(state, data.id) > 1 && (
+                <Button
+                  size="small"
+                  sx={{ color: "#ff6700" }}
+                  onClick={() => dispatch(Decrease(data))}
+                >
+                  -
+                </Button>
+              )}
+            </div>
           </CardActions>
         </CardActionArea>
       </Card>

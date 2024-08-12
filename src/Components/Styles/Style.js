@@ -102,12 +102,13 @@ const ShoppingCartTitle = styled(Typography)(({ theme }) => ({
   fontSize: "2rem",
   color: "#1e1e1e",
   textAlign: "center",
+  marginBottom: "50px",
 
   [theme.breakpoints.down("md")]: {
     fontSize: "1.4rem",
   },
   [theme.breakpoints.down("sm")]: {
-    fontSize: ".8rem",
+    fontSize: "1rem",
   },
 }));
 const FoodinoBoxTitle = styled(Typography)(({ theme }) => ({

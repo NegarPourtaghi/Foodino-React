@@ -12,7 +12,7 @@ const Footer = () => {
         alignItems: "center",
       }}
     >
-      <p style={{ color: "#fff" }}>Foodino created with 💗</p>
+      <p style={{ color: "#fff" }}>Foodino Chain Restaurant</p>
     </div>
   );
 };

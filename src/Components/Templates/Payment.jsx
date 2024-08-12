@@ -12,6 +12,7 @@ const Payment = () => {
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
+        marginTop: "100px",
       }}
     >
       <Grid
@@ -42,6 +43,7 @@ const Payment = () => {
             <Grid
               item
               md={6}
+              sm={6}
               xs={12}
               sx={{
                 display: "grid",
@@ -60,11 +62,12 @@ const Payment = () => {
             <Grid
               item
               md={6}
+              sm={6}
               xs={12}
               sx={{
                 display: "grid",
                 textAlign: "left",
-                justifyContent: "left",
+                justifyContent: "center",
                 alignItems: "center",
               }}
             >

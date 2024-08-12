@@ -57,12 +57,12 @@ const ShopingList = () => {
             </Buttons>
           </div>
         ) : (
-          <div style={{ marginTop: "60px" }}>
+          <div style={{ marginTop: "50px" }}>
             <ShoppingCartTitle>Favourite List</ShoppingCartTitle>
             <Grid
               container
               spacing={4}
-              sx={{ overflowY: "scroll", height: "400px" }}
+              sx={{ overflowY: "scroll", height: "300px" }}
             >
               {state.likedItems.map((item) => (
                 <Grid item xs={12} md={12} key={item.id}>

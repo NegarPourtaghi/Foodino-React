@@ -55,6 +55,11 @@ const cartReducer = (state = initialState, action) => {
       const newItems = state.selectedItems.filter(
         (item) => item.id !== action.payload.id
       );
+      const index = state.selectedItems.findIndex(
+        (item) => item.id === action.payload.id
+      );
+      state.selectedItems[index].quantity = 0;
+
       return {
         ...state,
         selectedItems: [...newItems],

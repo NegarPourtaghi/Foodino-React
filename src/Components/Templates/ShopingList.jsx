@@ -50,19 +50,13 @@ const ShopingList = ({ setEmpty }) => {
             </Buttons>
           </div>
         ) : (
-          <div style={{ marginTop: "60px" }}>
-            <Typography
-              variant="h4"
-              color="#1e1e1e"
-              sx={{ marginBottom: "60px", textAlign: "center" }}
-            >
-              Shopping List
-            </Typography>
+          <div style={{ marginTop: "50px" }}>
+            <ShoppingCartTitle>Shopping List</ShoppingCartTitle>
 
             <Grid
               container
               spacing={4}
-              sx={{ overflowY: "scroll", height: "400px" }}
+              sx={{ overflowY: "scroll", height: "300px" }}
             >
               {state.selectedItems.map((item) => (
                 <Grid item xs={12} md={12} key={item.id}>

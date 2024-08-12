@@ -138,9 +138,13 @@ const Home = () => {
             sm={4}
             md={3}
             sx={{
+              height: "420px",
               margin: "0px auto",
-              ":hover .phonenmber": { display: "block", transition: ".5s all" },
-              ":hover .myDiv": { height: "fit-content" },
+              ":hover .phonenumber": {
+                display: "block",
+                transition: ".5s all",
+              },
+              ":hover .myDiv": { height: "420px" },
             }}
           >
             <Box
@@ -148,7 +152,7 @@ const Home = () => {
               sx={{
                 border: "2px solid #ff6700",
                 borderRadius: "12px",
-                height: "fit-content",
+                height: "400px",
                 transition: ".5s all",
               }}
             >
@@ -174,7 +178,7 @@ const Home = () => {
                 </FoodinoBranchesTitle>
                 <Typography
                   variant="caption"
-                  className="phonenmber"
+                  className="phonenumber"
                   sx={{ display: "none", transition: ".5s all" }}
                 >
                   phone: +1 281-572-0204
@@ -189,8 +193,13 @@ const Home = () => {
             sm={4}
             md={3}
             sx={{
-              ":hover .phonenmber": { display: "block", transition: ".5s all" },
-              ":hover .myDiv": { height: "fit-content" },
+              height: "420px",
+              margin: "0px auto",
+              ":hover .phonenumber": {
+                display: "block",
+                transition: ".5s all",
+              },
+              ":hover .myDiv": { height: "420px" },
             }}
           >
             <Box
@@ -198,7 +207,118 @@ const Home = () => {
               sx={{
                 border: "2px solid #ff6700",
                 borderRadius: "12px",
-                height: "fit-content",
+                height: "400px",
+                transition: " .5s all ",
+              }}
+            >
+              <img
+                src={branch2}
+                alt="branches"
+                style={{
+                  width: "100%",
+                  borderTopRightRadius: "12px",
+                  borderTopLeftRadius: "12px",
+                }}
+              />
+              <div
+                className="new"
+                style={{
+                  height: "fit-content",
+                  textAlign: "center",
+                  padding: "20px",
+                }}
+              >
+                <Typography variant="h5">Houston</Typography>
+                <FoodinoBranchesTitle>
+                  1700 Post Oak Blvd #290, Houston, TX 77056, United States
+                </FoodinoBranchesTitle>
+                <Typography
+                  variant="caption"
+                  className="phonenumber"
+                  sx={{ display: "none", transition: ".5s all" }}
+                >
+                  phone: +1 281-572-0204
+                </Typography>
+              </div>
+            </Box>
+          </Grid>
+
+          <Grid
+            item
+            xs={12}
+            sm={4}
+            md={3}
+            sx={{
+              height: "420px",
+              margin: "0px auto",
+              ":hover .phonenumber": {
+                display: "block",
+                transition: ".5s all",
+              },
+              ":hover .myDiv": { height: "420px" },
+            }}
+          >
+            <Box
+              className="myDiv"
+              sx={{
+                border: "2px solid #ff6700",
+                borderRadius: "12px",
+                height: "400px",
+                transition: ".5s all",
+              }}
+            >
+              <img
+                src={branch1}
+                alt="branches"
+                style={{
+                  width: "100%",
+                  borderTopRightRadius: "12px",
+                  borderTopLeftRadius: "12px",
+                }}
+              />
+              <div
+                className="new"
+                style={{
+                  height: "fit-content",
+                  textAlign: "center",
+                  padding: "20px",
+                }}
+              >
+                <Typography variant="h5">Houston</Typography>
+                <FoodinoBranchesTitle>
+                  1700 Post Oak Blvd #290, Houston, TX 77056, United States
+                </FoodinoBranchesTitle>
+                <Typography
+                  variant="caption"
+                  className="phonenumber"
+                  sx={{ display: "none", transition: ".5s all" }}
+                >
+                  phone: +1 281-572-0204
+                </Typography>
+              </div>
+            </Box>
+          </Grid>
+
+          <Grid
+            item
+            xs={12}
+            sm={4}
+            md={3}
+            sx={{
+              height: "420px",
+              margin: "0px auto",
+              ":hover .phonenumber": {
+                display: "block",
+              },
+              ":hover .myDiv": { height: "420px" },
+            }}
+          >
+            <Box
+              className="myDiv"
+              sx={{
+                border: "2px solid #ff6700",
+                borderRadius: "12px",
+                height: "400px",
                 transition: ".5s all",
               }}
             >
@@ -225,112 +345,8 @@ const Home = () => {
                 </FoodinoBranchesTitle>
                 <Typography
                   variant="caption"
-                  className="phonenmber"
-                  sx={{ display: "none", transition: ".5s all" }}
-                >
-                  phone: +1 281-572-0204
-                </Typography>
-              </div>
-            </Box>
-          </Grid>
-
-          <Grid
-            item
-            xs={12}
-            sm={4}
-            md={3}
-            sx={{
-              margin: "0px auto",
-              ":hover .phonenmber": { display: "block", transition: ".5s all" },
-              ":hover .myDiv": { height: "fit-content" },
-            }}
-          >
-            <Box
-              className="myDiv"
-              sx={{
-                border: "2px solid #ff6700",
-                borderRadius: "12px",
-                height: "fit-content",
-                transition: ".5s all",
-              }}
-            >
-              <img
-                src={branch1}
-                alt="branches"
-                style={{
-                  width: "100%",
-                  borderTopRightRadius: "12px",
-                  borderTopLeftRadius: "12px",
-                }}
-              />
-              <div
-                className="new"
-                style={{
-                  height: "fit-content",
-                  textAlign: "center",
-                  padding: "20px",
-                }}
-              >
-                <Typography variant="h5">Houston</Typography>
-                <FoodinoBranchesTitle>
-                  1700 Post Oak Blvd #290, Houston, TX 77056, United States
-                </FoodinoBranchesTitle>
-                <Typography
-                  variant="caption"
-                  className="phonenmber"
-                  sx={{ display: "none", transition: ".5s all" }}
-                >
-                  phone: +1 281-572-0204
-                </Typography>
-              </div>
-            </Box>
-          </Grid>
-
-          <Grid
-            item
-            xs={12}
-            sm={4}
-            md={3}
-            sx={{
-              margin: "0px auto",
-              ":hover .phonenmber": { display: "block", transition: ".5s all" },
-              ":hover .myDiv": { height: "fit-content" },
-            }}
-          >
-            <Box
-              className="myDiv"
-              sx={{
-                border: "2px solid #ff6700",
-                borderRadius: "12px",
-                height: "fit-content",
-                transition: ".5s all",
-              }}
-            >
-              <img
-                src={branch2}
-                alt="branches"
-                style={{
-                  width: "100%",
-                  borderTopRightRadius: "12px",
-                  borderTopLeftRadius: "12px",
-                }}
-              />
-              <div
-                className="new"
-                style={{
-                  height: "fit-content",
-                  textAlign: "center",
-                  padding: "20px",
-                }}
-              >
-                <Typography variant="h5">Houston</Typography>
-                <FoodinoBranchesTitle>
-                  1700 Post Oak Blvd #290, Houston, TX 77056, United States
-                </FoodinoBranchesTitle>
-                <Typography
-                  variant="caption"
-                  className="phonenmber"
-                  sx={{ display: "none", transition: ".5s all" }}
+                  className="phonenumber"
+                  sx={{ display: "none", transition: ".7s all" }}
                 >
                   phone: +1 281-572-0204
                 </Typography>
